@@ -68,11 +68,15 @@
             position: absolute;
             bottom: 20px;
             left: -100px;
-            animation: drive 5s linear infinite;
+            animation: drive 8s linear infinite, bounce 0.5s infinite ease-in-out;
         }
         @keyframes drive {
             from { left: -100px; }
-            to { left: 100%; }
+            to { left: 110%; }
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
         }
     </style>
 </head>
@@ -80,4 +84,34 @@
     <h1>Bartemus Maximus Simulator 2024</h1>
     <img src="grammar.jpg" alt="Grandpa">
     <p>Experience the Legend:</p>
-    <ul
+    <ul>
+        <li>Always managing to piss off Grandma.</li>
+        <li>Unmatched ability to not hear a word you said.</li>
+        <li>Tells amazing (but long) stories.</li>
+        <li>Has an amazing grandson.</li>
+        <img src="Joseph.jpg" alt="Joseph">
+    </ul>
+    <button onclick="runDiagnostics()">Run Grandpa Diagnostics</button>
+    <div class="result" id="diagnostics">
+        <p>System Scan Results:</p>
+        <ul>
+            <li>Liquor detected in belly. Must get more.</li>
+            <li>Oxygen running low. Watch the line!</li>
+        </ul>
+    </div>
+    <div class="easter-egg" onclick="revealEasterEgg()">Unlock Grandpa's Debug Mode</div>
+    <div class="result" id="easterEgg" style="display: none;">
+        <p>Grandpa is not compatible with non-alcoholic beer.</p>
+    </div>
+    <img src="pickup-truck.png" alt="Pickup Truck" class="pickup-truck">
+
+    <script>
+        function runDiagnostics() {
+            document.getElementById('diagnostics').style.display = 'block';
+        }
+        function revealEasterEgg() {
+            document.getElementById('easterEgg').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
